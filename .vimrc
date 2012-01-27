@@ -120,28 +120,33 @@ imap <C-s> <Esc>:w<CR>i
 "show at least 2 lines of cmd history"
 set cmdheight=2
 
-" font stuff "
-" use set guifont=* to bring up GUI "
-"set guifont=Courier_New:h9:cANSI
-set guifont=Inconsolata\ Medium\ 10
-
-" zoom font in / out 
-nmap <C-MouseDown> :silent! let &guifont = substitute(&guifont, ' \zs\d\+', '\=eval(submatch(0)+1)', '')<CR>
-nmap <C-MouseUp> :silent! let &guifont = substitute(&guifont, ' \zs\d\+', '\=eval(submatch(0)-1)', '')<CR>
-nmap <C-MiddleMouse> :silent! set guifont=Inconsolata\ Medium\ 10<CR>
-
 
 " pick a decent color scheme
 colorscheme koehler 
 set background=dark
 
-" enable the mouse
-set mouse=a
-
 " Ctrl-N to toggle NERDTree
 nmap <C-N> :NERDTreeToggle<CR>
 
-" miniBuffExpl options
-" always show miniBufExpl
-let g:miniBufExplorerMoreThanOne=1
+" gui options
+if has("gui_running")
+    " miniBuffExpl options
+    " always show miniBufExpl
+    let g:miniBufExplorerMoreThanOne=1
+
+    " font stuff "
+    " use set guifont=* to bring up GUI "
+    "set guifont=Courier_New:h9:cANSI
+    set guifont=Inconsolata\ Medium\ 10
+
+    " zoom font in / out 
+    nmap <C-MouseDown> :silent! let &guifont = substitute(&guifont, ' \zs\d\+', '\=eval(submatch(0)+1)', '')<CR>
+    nmap <C-MouseUp> :silent! let &guifont = substitute(&guifont, ' \zs\d\+', '\=eval(submatch(0)-1)', '')<CR>
+    nmap <C-MiddleMouse> :silent! set guifont=Inconsolata\ Medium\ 10<CR>
+else
+    "console options
+    " enable the mouse
+    set mouse=a
+    set ttymouse=xterm2
+endif
 
