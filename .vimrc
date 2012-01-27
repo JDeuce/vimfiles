@@ -137,3 +137,11 @@ set background=dark
 
 " enable the mouse
 set mouse=a
+
+" Ctrl-N to toggle NERDTree
+nmap <C-N> :NERDTreeToggle<CR>
+
+" miniBuffExpl options
+" always show miniBufExpl
+let g:miniBufExplorerMoreThanOne=1
+
