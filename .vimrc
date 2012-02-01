@@ -37,9 +37,6 @@ set smarttab
 " and syntax highlighting
 syntax on
 
-" automatically place vim in working directory
-set autochdir 
-
 " ignore case in searches unless upper case is used
 set ignorecase
 set smartcase  
@@ -143,6 +140,11 @@ if has("gui_running")
     nmap <C-MouseDown> :silent! let &guifont = substitute(&guifont, ' \zs\d\+', '\=eval(submatch(0)+1)', '')<CR>
     nmap <C-MouseUp> :silent! let &guifont = substitute(&guifont, ' \zs\d\+', '\=eval(submatch(0)-1)', '')<CR>
     nmap <C-MiddleMouse> :silent! set guifont=Inconsolata\ Medium\ 10<CR>
+
+    if hostname() == "jjaques-desktop"
+        chdir /home/jjaques/dev
+    endif
+
 else
     "console options
     " enable the mouse
@@ -150,3 +152,10 @@ else
     set ttymouse=xterm2
 endif
 
+" automatically place vim in working directory
+set autochdir 
+
+set foldenable
+set foldmethod=marker
+
+let NERDTreeIgnore=['\~$', '.pyc$']
