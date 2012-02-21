@@ -23,7 +23,7 @@ set backspace=indent,eol,start
 " code navigation
 set number
 set cursorline
-set linespace=0 
+set linespace=0
 set scrolloff=10
 
 " file based loading "
@@ -39,10 +39,10 @@ syntax on
 
 " ignore case in searches unless upper case is used
 set ignorecase
-set smartcase  
+set smartcase
 
 " allow highlight search mode to be togglable
-function! ToggleHLSearch() 
+function! ToggleHLSearch()
        if &hls
             set nohls
        else
@@ -62,13 +62,6 @@ nmap <C-a> ggVG
 " Ctrl+A - Insert Mode: Select inside of a { block } of code
 imap <C-a> <esc>vi{
 imap <C-u> <esc>ui<CR>
-" Easier searching....
-"
-" Ctrl+F Searches text under cursor (visual or normal)
-nmap <C-f> * 
-imap <C-f> <esc> *
-vmap <C-f> *
-
 
 " Alt-Up/Down to move lines up / down
 nmap <M-Up> :m-2<CR>==
@@ -76,7 +69,7 @@ nmap <M-Down> :m+<CR>==
 
 imap <M-Up> <Esc>:m-2<CR>==gi
 imap <M-Down> <Esc>:m+<CR>==gi
-    
+
 vmap <M-Up> :m-2<CR>gv=gv
 vmap <M-Down> :m'>+<CR>gv=gv
 
@@ -108,7 +101,7 @@ import vim
 def EvaluateCurrentRange():
 	eval(compile('\n'.join(vim.current.range),'','exec'),globals())
 EOL
-au BufRead,BufNewFile *.py map <C-M-r> :py EvaluateCurrentRange() 
+au BufRead,BufNewFile *.py map <C-M-r> :py EvaluateCurrentRange()
 
 " ctrl-s saves file "
 nmap <C-s> :w<CR>
@@ -119,7 +112,7 @@ set cmdheight=2
 
 
 " pick a decent color scheme
-colorscheme koehler 
+colorscheme koehler
 set background=dark
 
 " Ctrl-N to toggle NERDTree
@@ -129,14 +122,14 @@ nmap <C-N> :NERDTreeToggle<CR>
 if has("gui_running")
     " miniBuffExpl options
     " always show miniBufExpl
-    let g:miniBufExplorerMoreThanOne=1
+    "let g:miniBufExplorerMoreThanOne=1
 
     " font stuff "
     " use set guifont=* to bring up GUI "
     "set guifont=Courier_New:h9:cANSI
     set guifont=Inconsolata\ Medium\ 10
 
-    " zoom font in / out 
+    " zoom font in / out
     nmap <C-MouseDown> :silent! let &guifont = substitute(&guifont, ' \zs\d\+', '\=eval(submatch(0)+1)', '')<CR>
     nmap <C-MouseUp> :silent! let &guifont = substitute(&guifont, ' \zs\d\+', '\=eval(submatch(0)-1)', '')<CR>
     nmap <C-MiddleMouse> :silent! set guifont=Inconsolata\ Medium\ 10<CR>
@@ -153,9 +146,17 @@ else
 endif
 
 " automatically place vim in working directory
-set autochdir 
+set autochdir
 
 set foldenable
 set foldmethod=marker
 
+" ignore ~ and pyc files in nerd tree
 let NERDTreeIgnore=['\~$', '.pyc$']
+
+" highlight dangling whitespace
+:highlight ExtraWhitespace ctermbg=darkgreen guibg=white
+:match ExtraWhitespace /\s\+$/
+
+" C-f does recursive grep on current word
+nmap <C-f> :vimgrep <cword> *.*<cr>:copen<cr>
