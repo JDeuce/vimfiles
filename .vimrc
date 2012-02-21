@@ -160,3 +160,20 @@ let NERDTreeIgnore=['\~$', '.pyc$']
 
 " C-f does recursive grep on current word
 nmap <C-f> :vimgrep <cword> *.*<cr>:copen<cr>
+
+" use vim persistent undo
+if version >= 703
+    " new persistent undo in vim 7.3
+    set undodir=~/.vim/tmp/undo/
+    set undofile
+    set undolevels=1000
+    set undoreload=10000
+endif
+
+" keep backups in /tmp
+set backupdir=~/.vim/tmp/backup/
+set backup
+set directory=~/.vim/tmp/swap//
+
+" use the system clipboard
+set clipboard=unnamed
