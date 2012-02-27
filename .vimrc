@@ -9,13 +9,18 @@ call pathogen#helptags()
 " allow opening new buffers without saving old buffer
 set hidden
 
-" remove toolbar from gui
+" remove toolbar and menu from gui
 set guioptions-=T
+set guioptions-=m
+
+" disable error bells
 set noerrorbells
 
-" put filename and other goodies in status line
+" always show the status line 
 set laststatus=2
-set statusline=%F%m%r%h%w
+
+" but don't show the editor mode (using powerline)
+set noshowmode
 
 " fix backspace
 set backspace=indent,eol,start
@@ -41,6 +46,9 @@ syntax on
 set ignorecase
 set smartcase
 
+" incremental search mode
+set incsearch
+
 " allow highlight search mode to be togglable
 function! ToggleHLSearch()
        if &hls
@@ -50,8 +58,6 @@ function! ToggleHLSearch()
        endif
 endfunction
 set nohls
-
-set incsearch
 
 " Ctrl+H Toggles Highlight Search.
 map <silent> <C-h> <Esc>:call ToggleHLSearch()<CR>
@@ -95,7 +101,7 @@ set shiftround " round to nearest tab when shifting
 "au BufRead,BufNewFile *.py,*.pyw set expandtab
 
 
-" ctrl+h runs python code "
+" ctrl+r runs python code "
 python << EOL
 import vim
 def EvaluateCurrentRange():
@@ -107,9 +113,8 @@ au BufRead,BufNewFile *.py map <C-M-r> :py EvaluateCurrentRange()
 nmap <C-s> :w<CR>
 imap <C-s> <Esc>:w<CR>i
 
-"show at least 2 lines of cmd history"
-set cmdheight=2
-
+"show only a single line of command line history
+set cmdheight=1
 
 " Ctrl-N to toggle NERDTree
 nmap <C-N> :NERDTreeToggle<CR>
@@ -144,8 +149,10 @@ endif
 " automatically place vim in working directory
 set autochdir
 
+" enable folding based on marker
 set foldenable
 set foldmethod=marker
+set foldmarker={{{,}}}
 
 " ignore ~ and pyc files in nerd tree
 let NERDTreeIgnore=['\~$', '.pyc$']
@@ -171,9 +178,12 @@ set backupdir=~/.vim/tmp/backup/
 set backup
 set directory=~/.vim/tmp/swap//
 
-" use the system clipboard
+" use the system clipboard (allows sharing between multiple vim instances)
 set clipboard=unnamed
 
 " pick a decent color scheme
 set background=dark
 colors molokai
+
+" set the title bar
+set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)
