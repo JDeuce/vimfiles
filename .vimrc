@@ -181,8 +181,8 @@ set directory=~/.vim/tmp/swap//
 set clipboard=unnamed
 
 " pick a decent color scheme
-set background=dark
 colors molokai
+set background=dark
 
 " set the title bar
 set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)
