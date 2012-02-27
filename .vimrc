@@ -16,7 +16,7 @@ set guioptions-=m
 " disable error bells
 set noerrorbells
 
-" always show the status line 
+" always show the status line
 set laststatus=2
 
 " but don't show the editor mode (using powerline)
@@ -158,8 +158,7 @@ set foldmarker={{{,}}}
 let NERDTreeIgnore=['\~$', '.pyc$']
 
 " highlight dangling whitespace
-:highlight ExtraWhitespace ctermbg=darkgreen guibg=white
-:match ExtraWhitespace /\s\+$/
+match SpellBad /\s\+$/
 
 " C-f does recursive grep on current word
 nmap <C-f> :vimgrep <cword> *.*<cr>:copen<cr>
