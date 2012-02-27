@@ -111,10 +111,6 @@ imap <C-s> <Esc>:w<CR>i
 set cmdheight=2
 
 
-" pick a decent color scheme
-colorscheme koehler
-set background=dark
-
 " Ctrl-N to toggle NERDTree
 nmap <C-N> :NERDTreeToggle<CR>
 
@@ -177,3 +173,7 @@ set directory=~/.vim/tmp/swap//
 
 " use the system clipboard
 set clipboard=unnamed
+
+" pick a decent color scheme
+set background=dark
+colors molokai
