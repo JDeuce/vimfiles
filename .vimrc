@@ -1,169 +1,49 @@
-" turn off vi compatible mode
-set nocp
-
-" enable pathogen
+" ----------------------------------------
+" pathogen initialization {{{
+" ----------------------------------------
+" disable to initialize pathogen
 filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-" allow opening new buffers without saving old buffer
-set hidden
-
-" remove toolbar and menu from gui
-set guioptions-=T
-set guioptions-=m
-
-" disable error bells
-set noerrorbells
-
-" always show the status line
-set laststatus=2
-
-" but don't show the editor mode (using powerline)
-set noshowmode
-
-" fix backspace
-set backspace=indent,eol,start
-
-" code navigation
-set number
-set cursorline
-set linespace=0
-set scrolloff=10
-
-" file based loading "
+" re-enable after pathogen starts
 filetype on
-filetype plugin indent on
 
-" turn on auto-indenting
-set cindent
-set smarttab
+" ----------------------------------------
+" end pathogen initialization }}}
+" ----------------------------------------
 
-" and syntax highlighting
-syntax on
+" ----------------------------------------
+" vim behavior {{{
+" ----------------------------------------
+set nocompatible               " vim behaves more usefully
+set autochdir                  " automatically place vim in working directory of any opened files
+set hidden                     " allow opening new buffers without saving old buffer
+set noerrorbells               " quit with your beeping
+set laststatus=2               " always show the status line
+set backspace=indent,eol,start " let backspace work anywhere in insert mode
+set number                     " show line numbers
+set cursorline                 " highlight the active editor line
+set scrolloff=10               " ensure at least 10 lines are always visible below cursor when scrolling
+set cmdheight=1                " show only a single line of command line history
+syntax on                      " enable syntax highlighting
+set linespace=0                " no extra whitespace between lines is required
 
-" ignore case in searches unless upper case is used
-set ignorecase
-set smartcase
+" indent settings
+set cindent                    " use c-style indenting
+set expandtab                  " expand tabs to spaces
+set tabstop=4                  " use 4 spaces on tab
+set smarttab                   " round to nearest tab on tab
+set shiftwidth=4               " use 4 spaces on <<,>>
+set shiftround                 " round to nearest tab on <<,>>
+filetype plugin indent on      " enable per-filetype indent settings
 
-" incremental search mode
-set incsearch
+" search settings
+set incsearch                  " use incremental search mode
+set nohls                      " disable highlight search mode
+set ignorecase                 " ignore case by default on searches
+set smartcase                  " unless i explicitly type uppercase, then match it
 
-" allow highlight search mode to be togglable
-function! ToggleHLSearch()
-       if &hls
-            set nohls
-       else
-            set hls
-       endif
-endfunction
-set nohls
-
-" Ctrl+H Toggles Highlight Search.
-map <silent> <C-h> <Esc>:call ToggleHLSearch()<CR>
-
-" Ctrl+A - Normal mode: Select all
-nmap <C-a> ggVG
-
-" Ctrl+A - Insert Mode: Select inside of a { block } of code
-imap <C-a> <esc>vi{
-imap <C-u> <esc>ui<CR>
-
-" Alt-Up/Down to move lines up / down
-nmap <M-Up> :m-2<CR>==
-nmap <M-Down> :m+<CR>==
-
-imap <M-Up> <Esc>:m-2<CR>==gi
-imap <M-Down> <Esc>:m+<CR>==gi
-
-vmap <M-Up> :m-2<CR>gv=gv
-vmap <M-Down> :m'>+<CR>gv=gv
-
-" Alt-Left/Right to unindent/indent
-nmap <M-Left> <<
-nmap <M-Right> >>
-
-imap <M-Left> ^D
-imap <M-Right> ^T
-
-vmap <M-Left> <gv
-vmap <M-Right> >g
-
-" allow ; instead of :, so if you're holding shift in normal mode...
-nore ; :
-
-" 4-space tabs  "
-set shiftwidth=4
-set expandtab
-set tabstop=4
-set shiftround " round to nearest tab when shifting
-"au BufRead,BufNewFile *.py,*pyw set shiftwidth=4
-"au BufRead,BufNewFile *.py,*.pyw set expandtab
-
-
-" ctrl+r runs python code "
-python << EOL
-import vim
-def EvaluateCurrentRange():
-	eval(compile('\n'.join(vim.current.range),'','exec'),globals())
-EOL
-au BufRead,BufNewFile *.py map <C-M-r> :py EvaluateCurrentRange()
-
-" ctrl-s saves file "
-nmap <C-s> :w<CR>
-imap <C-s> <Esc>:w<CR>i
-
-"show only a single line of command line history
-set cmdheight=1
-
-" Ctrl-N to toggle NERDTree
-nmap <C-N> :NERDTreeToggle<CR>
-
-" gui options
-if has("gui_running")
-    " miniBuffExpl options
-    " always show miniBufExpl
-    "let g:miniBufExplorerMoreThanOne=1
-
-    " font stuff "
-    " use set guifont=* to bring up GUI "
-    "set guifont=Courier_New:h9:cANSI
-    set guifont=Inconsolata\ Medium\ 10
-
-    " zoom font in / out
-    nmap <C-MouseDown> :silent! let &guifont = substitute(&guifont, ' \zs\d\+', '\=eval(submatch(0)+1)', '')<CR>
-    nmap <C-MouseUp> :silent! let &guifont = substitute(&guifont, ' \zs\d\+', '\=eval(submatch(0)-1)', '')<CR>
-    nmap <C-MiddleMouse> :silent! set guifont=Inconsolata\ Medium\ 10<CR>
-
-    if hostname() == "jjaques-desktop"
-        chdir /home/jjaques/dev
-    endif
-
-else
-    "console options
-    " enable the mouse
-    set mouse=a
-    set ttymouse=xterm2
-endif
-
-" automatically place vim in working directory
-set autochdir
-
-" enable folding based on marker
-set foldenable
-set foldmethod=marker
-set foldmarker={{{,}}}
-
-" ignore ~ and pyc files in nerd tree
-let NERDTreeIgnore=['\~$', '.pyc$']
-
-" highlight dangling whitespace
-match SpellBad /\s\+$/
-
-" C-f does recursive grep on current word
-nmap <C-f> :vimgrep <cword> *.*<cr>:copen<cr>
-
-" use vim persistent undo
 if version >= 703
     " new persistent undo in vim 7.3
     set undodir=~/.vim/tmp/undo/
@@ -177,15 +57,169 @@ set backupdir=~/.vim/tmp/backup/
 set backup
 set directory=~/.vim/tmp/swap//
 
-" use the system clipboard (allows sharing between multiple vim instances)
-set clipboard=unnamed
+" enable folding based on marker
+set foldenable
+set foldmethod=marker
+set foldmarker={{{,}}}
 
-" pick a decent color scheme
+" set molokai color scheme
 colors molokai
 set background=dark
 
-" set the title bar
-set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)
+" use the system clipboard (allows sharing between multiple vim instances)
+set clipboard=unnamed
+" ----------------------------------------
+" end vim behavior }}}
+" ----------------------------------------
 
-" fancy powerline status bar
-let g:Powerline_symbols='fancy'
+" ----------------------------------------
+" gui tweaks {{{
+" ----------------------------------------
+if has("gui_running")
+    " gui tweaks:
+    set guioptions-=T " disable toolbar
+    set guioptions-=m " disable menu
+    " miniBuffExpl options
+    " always show miniBufExpl
+
+    " font stuff "
+    " use set guifont=* to bring up GUI "
+    set guifont=Inconsolata\ Medium\ 10
+
+    " zoom font in / out with mouse
+    nmap <C-MouseDown> :silent! let &guifont = substitute(&guifont, ' \zs\d\+', '\=eval(submatch(0)+1)', '')<CR>
+    nmap <C-MouseUp> :silent! let &guifont = substitute(&guifont, ' \zs\d\+', '\=eval(submatch(0)-1)', '')<CR>
+    nmap <C-MiddleMouse> :silent! set guifont=Inconsolata\ Medium\ 10<CR>
+
+    " change default directory when opening vim
+    if hostname() == "jjaques-desktop"
+        chdir /home/jjaques/dev
+    endif
+
+    " ensure filename and path are in the title bar
+    set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)
+endif
+" ----------------------------------------
+" end gui tweaks }}}
+" ----------------------------------------
+
+" ----------------------------------------
+" console tweaks {{{
+" ----------------------------------------
+function! MapKeycode(intermediate, key, keycode)
+    " based on http://vim.wikia.com/wiki/Mapping_fast_keycodes_in_terminal_Vim
+    " vim doesn't allow you to say set <M-up>=Escaped code
+    " you must first set another intermediate, then map the command to m-up
+    exec 'set '.a:intermediate.'='.a:keycode
+    exec 'map '.a:intermediate.' '.a:key
+endfunction
+
+if !has("gui_running")
+    " enable the mouse
+    set mouse=a
+    set ttymouse=xterm2
+
+    if &term == "screen-256color"
+        " remap the alt+arrows to the ones we get from screen
+        call MapKeycode('<F13>', '<M-Up>', '[1;3A')
+        call MapKeycode('<F14>', '<M-Down>', '[1;3B')
+        call MapKeycode('<F15>', '<M-Left>', '[1;3D')
+        call MapKeycode('<F16>', '<M-Right>', '[1;3C')
+    endif
+endif
+" ----------------------------------------
+" end console tweaks }}}
+" ----------------------------------------
+
+" ----------------------------------------
+" highlights {{{
+" ----------------------------------------
+match SpellBad /\s\+$/ " highlight dangling whitespace
+" ----------------------------------------
+" end highlights }}}
+" ----------------------------------------
+
+" ----------------------------------------
+" plugin settings {{{
+" ----------------------------------------
+
+" powerline settings {{{
+    set noshowmode                   " disable default editor mode
+    let g:Powerline_symbols='fancy'  " tell powerline to use patched font
+" end powerline settings }}}
+
+" NERDtree settings {{{
+    " ignore ~ and pyc files in nerd tree
+    let NERDTreeIgnore=['\~$', '.pyc$']
+" end NERDtree settings }}}
+
+" MiniBuffExpl settings {{{
+    " ensure the MBE window displays even with only 1 tab to show
+    " disable for now because it seems to mess with :q
+    "let g:miniBufExplorerMoreThanOne=1
+" end MiniBuffExpl setings }}}
+
+" ----------------------------------------
+" end plugin settings }}}
+" ----------------------------------------
+
+" ----------------------------------------
+" key bindings {{{
+" ----------------------------------------
+" NATIVE bindings:
+
+" Ctrl+f does recursive grep on current word
+nmap <C-f> :vimgrep <cword> *.*<cr>:copen<cr>
+
+" map ; to : so holding shift doesn't mess up command mode
+nore ; :
+
+"  Ctrl+H Toggles Highlight Search {{{
+    function! ToggleHLSearch()
+        " toggle the hls setting
+        if &hls
+            set nohls
+        else
+            set hls
+        endif
+    endfunction
+    map <silent> <C-h> <Esc>:call ToggleHLSearch()<CR>
+" End Ctrl+H }}}
+
+" Ctrl+R Runs Visually Selected Python Code {{{
+    python << EOL
+import vim
+def EvaluateCurrentRange():
+    eval(compile('\n'.join(vim.current.range),'','exec'),globals())
+EOL
+    au BufRead,BufNewFile *.py map <C-r> :py EvaluateCurrentRange()
+" End Ctrl+R }}}
+
+" Alt+Up/Alt+Down move lines around {{{
+    nmap <M-Up> :m-2<CR>==
+    nmap <M-Down> :m+<CR>==
+
+    imap <M-Up> <Esc>:m-2<CR>==gi
+    imap <M-Down> <Esc>:m+<CR>==gi
+
+    vmap <M-Up> :m-2<CR>gv=gv
+    vmap <M-Down> :m'>+<CR>gv=gv
+" end Alt+Up/Alt+down }}}
+
+" Alt+Left/Alt+Right to unindent/indent {{{
+    nmap <M-Left> <<
+    nmap <M-Right> >>
+
+    imap <M-Left> ^D
+    imap <M-Right> ^T
+
+    vmap <M-Left> <gv
+    vmap <M-Right> >g
+" end Alt+left/Alt+right }}}
+
+" PLUGIN bindings:
+" Ctrl+N toggles nerd tree
+nmap <C-N> :NERDTreeToggle<CR>
+" ----------------------------------------
+" end key bindings }}}
+" ----------------------------------------
