@@ -186,3 +186,6 @@ set background=dark
 
 " set the title bar
 set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)
+
+" fancy powerline status bar
+let g:Powerline_symbols='fancy'
