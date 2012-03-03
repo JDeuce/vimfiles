@@ -118,6 +118,7 @@ if !has("gui_running")
     " enable the mouse
     set mouse=a
     set ttymouse=xterm2
+    set t_Co=256
 
     if &term == "screen-256color"
         " remap the alt+arrows to the ones we get from screen
@@ -187,12 +188,15 @@ nore ; :
 " End Ctrl+H }}}
 
 " Ctrl+R Runs Visually Selected Python Code {{{
+try
     python << EOL
 import vim
 def EvaluateCurrentRange():
     eval(compile('\n'.join(vim.current.range),'','exec'),globals())
 EOL
     au BufRead,BufNewFile *.py map <C-r> :py EvaluateCurrentRange()
+catch
+endtry
 " End Ctrl+R }}}
 
 " Alt+Up/Alt+Down move lines around {{{

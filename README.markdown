@@ -5,7 +5,8 @@ This is my VIM setup. It is mostly tuned for editing python
 ## Installing it ##
 
  1. Clone the repo.
- 2. Install the repo to ~/.vim, either by symlink or by directly installing it there.
+ 2. Install the repo to ~/.vim, either by symlink or by directly installing it there. (ensure it's location is in $VIMRUNTIME)
+ 3. Symlink ~/.vim/.vimrc to ~/.vimrc
 
 ## Dependencies ##
 
