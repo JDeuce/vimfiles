@@ -43,3 +43,6 @@
 [submodule "bundle/plantuml-syntax"]
 	path = bundle/plantuml-syntax
 	url = https://github.com/dtjm/plantuml-syntax.vim.git
+[submodule "bundle/jinja-syntax"]
+	path = bundle/jinja-syntax
+	url = http://github.com/JDeuce/jinja-syntax.git
