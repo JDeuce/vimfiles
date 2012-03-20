@@ -194,7 +194,7 @@ import vim
 def EvaluateCurrentRange():
     eval(compile('\n'.join(vim.current.range),'','exec'),globals())
 EOL
-    au BufRead,BufNewFile *.py map <C-r> :py EvaluateCurrentRange()
+    au BufRead,BufNewFile *.py vmap <C-r> :py EvaluateCurrentRange()
 catch
 endtry
 " End Ctrl+R }}}
