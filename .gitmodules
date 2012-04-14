@@ -9,7 +9,7 @@
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
 [submodule "bundle/snipmate-snippets"]
 	path = bundle/snipmate-snippets
-	url = https://JDeuce@github.com/JDeuce/snipmate-snippets.git
+	url = https://github.com/JDeuce/snipmate-snippets.git
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -21,7 +21,7 @@
 	url = https://github.com/tpope/vim-pathogen
 [submodule "bundle/Command-T"]
 	path = bundle/Command-T
-	url = https://JDeuce@github.com/JDeuce/Command-T.git
+	url = https://github.com/JDeuce/Command-T.git
 [submodule "bundle/pep8"]
 	path = bundle/pep8
 	url = https://github.com/vim-scripts/pep8.git
