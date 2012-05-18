@@ -20,9 +20,9 @@ set nocompatible               " vim behaves more usefully
 set autochdir                  " automatically place vim in working directory of any opened files
 set hidden                     " allow opening new buffers without saving old buffer
 set noerrorbells               " quit with your beeping
-set laststatus=2               " always show the status line
+set laststatus=1               " always show the status line
 set backspace=indent,eol,start " let backspace work anywhere in insert mode
-set number                     " show line numbers
+set nonumber                   " don't show line numbers
 set cursorline                 " highlight the active editor line
 set scrolloff=10               " ensure at least 10 lines are always visible below cursor when scrolling
 set cmdheight=1                " show only a single line of command line history
@@ -68,6 +68,7 @@ set background=dark
 
 " use the system clipboard (allows sharing between multiple vim instances)
 set clipboard=unnamed
+
 " ----------------------------------------
 " end vim behavior }}}
 " ----------------------------------------
