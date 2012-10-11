@@ -2,13 +2,24 @@
 
 This is my VIM setup. It is mostly tuned for editing python
 
-## Installing it ##
+## Basic Install ##
 
  1. Clone the repo.
- 2. Install the repo to ~/.vim, either by symlink or by directly installing it there. (ensure it's location is in $VIMRUNTIME)
- 3. Symlink ~/.vim/.vimrc to ~/.vimrc
 
-## Dependencies ##
+        * git clone github.com/JDeuce/vimfiles.git ~/.vim
+        * git submodule init
+        * git submodule update
+
+        Note: Regardless of where you clone it, you should install the repo to ~/.vim [1].
+        You can symlink it, or install it directly as the above command will do.
+
+        * *[1] - technically the location just has to be in $VIMRUNTIME
+
+ 2. Symlink ~/.vim/.vimrc to ~/.vimrc
+
+        * ln -s ~/.vim/.vimrc ~/.vimrc
+
+## Extra functionality with these plugins ##
 
 ### Command-T ###
 The Command-T plugin allows you to type \t to do a
