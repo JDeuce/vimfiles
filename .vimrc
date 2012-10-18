@@ -55,7 +55,7 @@ endif
 " keep backups in /tmp
 set backupdir=~/.vim/tmp/backup/
 set backup
-set directory=~/.vim/tmp/swap//
+set directory=~/.vim/tmp/swap/
 
 " enable folding based on marker
 set foldenable
