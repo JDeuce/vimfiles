@@ -224,6 +224,13 @@ endtry
     vmap <M-Right> >g
 " end Alt+left/Alt+right }}}
 
+" Bind . and & in visual mode.
+" Allows one to repeat commands and search replacements you made on one
+" line to all lines in a visual selection
+vnoremap . :normal .<CR>
+vnoremap & :normal &<CR>
+
+
 " PLUGIN bindings:
 " Ctrl+N toggles nerd tree
 nmap <C-N> :NERDTreeToggle<CR>
