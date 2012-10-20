@@ -64,3 +64,6 @@
 	path = bundle/vimshell
 	url = https://github.com/Shougo/vimshell
 	ignore = untracked
+[submodule "bundle/vim-puppet"]
+	path = bundle/vim-puppet
+	url = https://github.com/rodjek/vim-puppet
