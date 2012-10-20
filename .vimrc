@@ -20,6 +20,7 @@ set isfname-==                 " don't allow completion of filenames with the '=
                                " (this allows compl. of fname to var assignments in shell scripts)
 set nocompatible               " vim behaves more usefully
 set autochdir                  " automatically place vim in working directory of any opened files
+set encoding=utf-8             " use unicode from within vim
 set hidden                     " allow opening new buffers without saving old buffer
 set noerrorbells               " quit with your beeping
 set laststatus=1               " always show the status line
