@@ -66,4 +66,4 @@
 	ignore = untracked
 [submodule "bundle/vim-puppet"]
 	path = bundle/vim-puppet
-	url = https://github.com/rodjek/vim-puppet
+	url = https://github.com/JDeuce/vim-puppet
