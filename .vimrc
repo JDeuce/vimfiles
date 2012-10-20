@@ -33,7 +33,6 @@ syntax on                      " enable syntax highlighting
 set linespace=0                " no extra whitespace between lines is required
 
 " indent settings
-set cindent                    " use c-style indenting
 set expandtab                  " expand tabs to spaces
 set tabstop=4                  " use 4 spaces on tab
 set smarttab                   " round to nearest tab on tab
