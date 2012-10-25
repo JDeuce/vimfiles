@@ -6,7 +6,8 @@ This is my VIM setup. It is mostly tuned for editing python
 
  1. Clone the repo.
 
-        * git clone github.com/JDeuce/vimfiles.git ~/.vim
+        * git clone https://github.com/JDeuce/vimfiles.git ~/.vim
+        * cd ~/.vim
         * git submodule init
         * git submodule update
 
