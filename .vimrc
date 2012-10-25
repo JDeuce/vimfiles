@@ -23,7 +23,7 @@ set autochdir                  " automatically place vim in working directory of
 set encoding=utf-8             " use unicode from within vim
 set hidden                     " allow opening new buffers without saving old buffer
 set noerrorbells               " quit with your beeping
-set laststatus=1               " always show the status line
+set laststatus=1               " only show status line when there's at least two files
 set backspace=indent,eol,start " let backspace work anywhere in insert mode
 set nonumber                   " don't show line numbers
 set cursorline                 " highlight the active editor line
