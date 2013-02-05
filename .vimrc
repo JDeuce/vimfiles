@@ -19,7 +19,7 @@ filetype on
 set isfname-==                 " don't allow completion of filenames with the '=' character
                                " (this allows compl. of fname to var assignments in shell scripts)
 set nocompatible               " vim behaves more usefully
-set autochdir                  " automatically place vim in working directory of any opened files
+"set autochdir                  " automatically place vim in working directory of any opened files
 set encoding=utf-8             " use unicode from within vim
 set hidden                     " allow opening new buffers without saving old buffer
 set noerrorbells               " quit with your beeping
@@ -231,6 +231,8 @@ endtry
 vnoremap . :normal .<CR>
 vnoremap & :normal &<CR>
 
+" \b to switch to last buffer
+nmap <leader>b :b#<CR>
 
 " PLUGIN bindings:
 " Ctrl+N toggles nerd tree
