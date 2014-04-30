@@ -54,13 +54,6 @@
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule "bundle/vimproc"]
-	path = bundle/vimproc
-	url = https://github.com/Shougo/vimproc.git
-[submodule "bundle/vimshell"]
-	path = bundle/vimshell
-	url = https://github.com/Shougo/vimshell
-	ignore = untracked
 [submodule "bundle/vim-puppet"]
 	path = bundle/vim-puppet
 	url = https://github.com/JDeuce/vim-puppet
