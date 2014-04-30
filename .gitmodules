@@ -20,9 +20,6 @@
 [submodule "pathogen"]
 	path = pathogen
 	url = https://github.com/tpope/vim-pathogen
-[submodule "bundle/Command-T"]
-	path = bundle/Command-T
-	url = https://github.com/JDeuce/Command-T.git
 [submodule "bundle/pep8"]
 	path = bundle/pep8
 	url = https://github.com/vim-scripts/pep8.git
