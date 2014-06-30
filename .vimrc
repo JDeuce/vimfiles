@@ -251,7 +251,7 @@ nmap <leader>b :b#<CR>
 
 " PLUGIN bindings:
 " Ctrl+N toggles nerd tree
-nmap <C-N> :NERDTreeToggle<CR>
+nmap <C-T> :NERDTreeToggle<CR>
 
 " Unite bindings
 nnoremap <space>/ :Unite grep:.<cr>
