@@ -169,6 +169,10 @@ match SpellBad /\s\+$/ " highlight dangling whitespace
 autocmd FileType python setlocal completeopt-=preview
 " end JEDI settings }}}
 
+" Unite settings {{{
+let g:unite_source_history_yank_enable = 1
+" end Unite settings }}}
+
 " ----------------------------------------
 " end plugin settings }}}
 " ----------------------------------------
@@ -242,6 +246,11 @@ nmap <leader>b :b#<CR>
 " PLUGIN bindings:
 " Ctrl+N toggles nerd tree
 nmap <C-N> :NERDTreeToggle<CR>
+
+" Unite bindings
+nnoremap <space>/ :Unite grep:.<cr>
+nnoremap <space>p :Unite history/yank<cr>
+
 " ----------------------------------------
 " end key bindings }}}
 " ----------------------------------------
