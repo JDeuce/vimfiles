@@ -173,6 +173,12 @@ autocmd FileType python setlocal completeopt-=preview
 let g:unite_source_history_yank_enable = 1
 " end Unite settings }}}
 
+" multiple-cursors settings {{{
+" only exit multiple cursors from normal mode
+let g:multi_cursor_exit_from_visual_mode = 0
+let g:multi_cursor_exit_from_insert_mode = 0
+" end multiple-cursors settings }}}
+"
 " ----------------------------------------
 " end plugin settings }}}
 " ----------------------------------------
