@@ -57,3 +57,6 @@
 [submodule "bundle/vim-puppet"]
 	path = bundle/vim-puppet
 	url = https://github.com/JDeuce/vim-puppet
+[submodule "bundle/jedi-vim"]
+	path = bundle/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git

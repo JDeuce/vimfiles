@@ -164,6 +164,10 @@ match SpellBad /\s\+$/ " highlight dangling whitespace
     "let g:miniBufExplorerMoreThanOne=1
 " end MiniBuffExpl setings }}}
 
+" JEDI settings {{{
+autocmd FileType python setlocal completeopt-=preview
+" end JEDI settings }}}
+
 " ----------------------------------------
 " end plugin settings }}}
 " ----------------------------------------
