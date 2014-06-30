@@ -66,8 +66,8 @@ set foldmethod=marker
 set foldmarker={{{,}}}
 
 " set molokai color scheme
-set background=dark
 colors molokai
+set background=dark
 highlight ColorColumn ctermbg=red
 
 " use the system clipboard (allows sharing between multiple vim instances)
