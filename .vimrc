@@ -171,6 +171,7 @@ autocmd FileType python setlocal completeopt-=preview
 
 " Unite settings {{{
 let g:unite_source_history_yank_enable = 1
+let g:unite_source_history_yank_limit = 5
 " end Unite settings }}}
 
 " multiple-cursors settings {{{
