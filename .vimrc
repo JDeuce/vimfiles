@@ -119,6 +119,7 @@ function! MapKeycode(intermediate, key, keycode)
     " you must first set another intermediate, then map the command to m-up
     exec 'set '.a:intermediate.'='.a:keycode
     exec 'map '.a:intermediate.' '.a:key
+    exec 'imap '.a:intermediate.' '.a:key
 endfunction
 
 if !has("gui_running")
