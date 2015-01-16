@@ -130,10 +130,14 @@ if !has("gui_running")
 
     if &term == "screen-256color"
         " remap the alt+arrows to the ones we get from screen
-        call MapKeycode('<F13>', '<M-Up>', '[1;3A')
-        call MapKeycode('<F14>', '<M-Down>', '[1;3B')
-        call MapKeycode('<F15>', '<M-Left>', '[1;3D')
-        call MapKeycode('<F16>', '<M-Right>', '[1;3C')
+        call MapKeycode('<F13>' , '<M-Up>'        , '[1;3A')
+        call MapKeycode('<F14>' , '<M-Down>'      , '[1;3B')
+        call MapKeycode('<F15>' , '<M-Left>'      , '[1;3D')
+        call MapKeycode('<F16>' , '<M-Right>'     , '[1;3C')
+        call MapKeycode('<F17>' , '<S-Up>'    , '[1;2A')
+        call MapKeycode('<F18>' , '<S-Down>'  , '[1;2B')
+        call MapKeycode('<F19>' , '<S-Left>'  , '[1;2D')
+        call MapKeycode('<F20>' , '<S-Right>' , '[1;2C')
     endif
 endif
 " ----------------------------------------
