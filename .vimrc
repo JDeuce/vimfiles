@@ -247,6 +247,23 @@ endtry
     vmap <M-Left> <gv
     vmap <M-Right> >g
 " end Alt+left/Alt+right }}}
+"
+" Shift+arrows visual{{{
+    nmap <S-Up> v^<Up>
+    vmap <S-Up> ^<Up>
+    imap <S-Up> <Esc>v^<Up>
+    nmap <S-Down> v$<Down>
+    vmap <S-Down> $<Down>
+    imap <S-Down> <Esc>v$<Down>
+    nmap <S-Left> v<Left>
+    vmap <S-Left> <Left>
+    imap <S-Left> <Esc>v<Left>
+    nmap <S-Right> v<Right>
+    vmap <S-Right> <Right>
+    imap <S-Right> <Esc>v<Right>
+    vmap <S-End> $
+    vmap <S-Home> 0
+" end shift+arrows }}}
 
 " Bind . and & in visual mode.
 " Allows one to repeat commands and search replacements you made on one
