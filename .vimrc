@@ -73,6 +73,8 @@ highlight ColorColumn ctermbg=red
 " use the system clipboard (allows sharing between multiple vim instances)
 set clipboard=unnamed
 
+command Sw :w !sudo tee % > /dev/null
+
 " ----------------------------------------
 " end vim behavior }}}
 " ----------------------------------------
