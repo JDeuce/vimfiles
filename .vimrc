@@ -176,6 +176,10 @@ match SpellBad /\s\+$/ " highlight dangling whitespace
 autocmd FileType python setlocal completeopt-=preview
 " end JEDI settings }}}
 
+" Syntastic {{{
+let g:syntastic_javascript_checkers = ['eslint']
+" end Syntastic settings }}}
+
 " Unite settings {{{
 let g:unite_source_history_yank_enable = 1
 let g:unite_source_history_yank_limit = 5
@@ -186,6 +190,7 @@ let g:unite_source_history_yank_limit = 5
 let g:multi_cursor_exit_from_visual_mode = 0
 let g:multi_cursor_exit_from_insert_mode = 0
 " end multiple-cursors settings }}}
+
 "
 " ----------------------------------------
 " end plugin settings }}}
