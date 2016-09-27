@@ -291,3 +291,11 @@ nnoremap <space>p :Unite history/yank<cr>
 " ----------------------------------------
 " end key bindings }}}
 " ----------------------------------------
+"
+
+"--- rip arrows
+
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
