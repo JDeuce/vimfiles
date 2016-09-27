@@ -1,18 +1,3 @@
-" ----------------------------------------
-" pathogen initialization {{{
-" ----------------------------------------
-" disable to initialize pathogen
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-
-" re-enable after pathogen starts
-filetype on
-
-" ----------------------------------------
-" end pathogen initialization }}}
-" ----------------------------------------
-
 
 " ----------------------------------------
 " vim behavior {{{
@@ -31,6 +16,7 @@ set cursorline                 " highlight the active editor line
 set scrolloff=10               " ensure at least 10 lines are always visible below cursor when scrolling
 set cmdheight=1                " show only a single line of command line history
 syntax on                      " enable syntax highlighting
+filetype on                    " detect file being edited
 set linespace=0                " no extra whitespace between lines is required
 
 " indent settings
