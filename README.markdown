@@ -9,7 +9,7 @@ This is my VIM setup. It is mostly tuned for editing python
         git clone https://github.com/JDeuce/vimfiles.git ~/.vim
         cd ~/.vim
         git submodule init
-        git submodule update
+        git submodule update --recursive
 
  Note: If you really don't want to put it in ~/.vim, you just need to make
  sure the project is checked out and exposed to $VIMRUNTIME
