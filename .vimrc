@@ -59,6 +59,10 @@ highlight ColorColumn ctermbg=red
 " use the system clipboard (allows sharing between multiple vim instances)
 set clipboard=unnamed
 
+" disable modelines
+set modelines=0
+set nomodeline
+
 command Sw :w !sudo tee % > /dev/null
 
 " ----------------------------------------
