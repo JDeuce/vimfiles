@@ -153,7 +153,7 @@ match SpellBad /\s\+$/ " highlight dangling whitespace
 
 " NERDtree settings {{{
     " ignore ~ and pyc files in nerd tree
-    let NERDTreeIgnore=['\~$', '.pyc$']
+    let NERDTreeIgnore=['\~$', '.pyc$', '__pycache__']
 " end NERDtree settings }}}
 
 " MiniBuffExpl settings {{{
