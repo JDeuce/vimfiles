@@ -42,3 +42,27 @@ should install the pyflakes package.
 E.g.:
 
     apt-get install pyflakes
+
+# Completor
+
+- Needs yarn available
+
+cd bundle/completor
+make
+
+- Python support
+
+pip install jedi
+or
+pip3 install jedi
+
+# Adding submodule
+
+git submodule add https://github.com/maralla/completor.vim bundle/completor
+
+# Removing submodule
+
+- Delete section from .gitmodules
+- Stage change to .gitmodules
+- git rm bundle/x file
+- commit
