@@ -63,7 +63,7 @@ set clipboard=unnamed
 set modelines=0
 set nomodeline
 
-command Sw :w !sudo tee % > /dev/null
+command! Sw :w !sudo tee % > /dev/null
 
 " ----------------------------------------
 " end vim behavior }}}
