@@ -278,6 +278,10 @@ nmap <C-T> :NERDTreeToggle<CR>
 nnoremap <space>/ :Unite grep:.<cr>
 nnoremap <space>p :Unite history/yank<cr>
 
+" Completor binding
+" use <cr> as <C-y> when it's open
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+
 " ----------------------------------------
 " end key bindings }}}
 " ----------------------------------------
