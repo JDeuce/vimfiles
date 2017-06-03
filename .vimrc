@@ -11,7 +11,8 @@ set hidden                     " allow opening new buffers without saving old bu
 set noerrorbells               " quit with your beeping
 set laststatus=1               " only show status line when there's at least two files
 set backspace=indent,eol,start " let backspace work anywhere in insert mode
-set nonumber                   " don't show line numbers
+set number                     " show line numbers
+set numberwidth=2
 set cursorline                 " highlight the active editor line
 set scrolloff=10               " ensure at least 10 lines are always visible below cursor when scrolling
 set cmdheight=1                " show only a single line of command line history
@@ -168,7 +169,7 @@ autocmd FileType python setlocal completeopt-=preview
 
 " Syntastic {{{
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_python_checkers = ['flake8']
 " end Syntastic settings }}}
 
 " Unite settings {{{
