@@ -98,7 +98,7 @@ I have personally tested and used this setup on the following platforms:
 ### Features you can use with commands
 
 * `:GundoToggle` - hide / show an undo graph if you need more than one branch
-* `:Align \<symbol\>` - Visual select a group of lines and then run that
+* `:Align <symbol>` - Visual select a group of lines and then run that
   to align them all on some symbol, such as : or ,
 * `:Sw` - run this if you need to :w the file as sudo without re-opening vim
 
@@ -112,19 +112,19 @@ place.
 To completely clone the repo you also need to clone the submodules, which you
 can do easier+faster with newer versions of git.
 
-    * Git version ~2.8 or later (download submodules in parallel)
+* Git version ~2.8 or later (download submodules in parallel)
 
-    ```bash
-    git clone --recursive -j8 https://github.com/JDeuce/vimfiles.git ~/.vim
-    ```
+  ```bash
+  git clone --recursive -j8 https://github.com/JDeuce/vimfiles.git ~/.vim
+  ```
 
-    * Git version ~1.8 or later (download submodules in one command)
+* Git version ~1.8 or later (download submodules in one command)
 
     ```bash
     git clone --recursive https://github.com/JDeuce/vimfiles.git ~/.vim
     ```
 
-    * Ancient version of git (download submodules in 4 commands)
+* Ancient version of git (download submodules in 4 commands)
 
     ```bash
     git clone https://github.com/JDeuce/vimfiles.git ~/.vim
