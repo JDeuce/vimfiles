@@ -242,10 +242,12 @@ git submodule add https://github.com/maralla/completor.vim bundle/completor
 
 #### Removing plugin
 
-* Delete section from .gitmodules
-* Stage change to .gitmodules
-* git rm bundle/x file
-* git commit
+Simply remove the submodule.
+
+```bash
+git rm bundle/x
+git commit
+```
 
 #### Updating a plugin
 
