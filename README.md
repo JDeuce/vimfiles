@@ -60,7 +60,7 @@ I have personally tested and used this setup on the following platforms:
 * use through a terminal multiplexor
 * make sure your full stack supports 256 colors
 * use a dark background in your terminal
-* compiled with `python` and `python3` support
+* compiled with `+python` and `+python3` support
   (various plugins use both)
 
 ### Compiling vim from source
