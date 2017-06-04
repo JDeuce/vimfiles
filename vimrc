@@ -254,18 +254,18 @@ endtry
 " end Alt+left/Alt+right }}}
 "
 " Shift+arrows visual{{{
-    nmap <S-Up> v^<Up>
-    vmap <S-Up> ^<Up>
-    imap <S-Up> <Esc>v^<Up>
-    nmap <S-Down> v$<Down>
-    vmap <S-Down> $<Down>
-    imap <S-Down> <Esc>v$<Down>
-    nmap <S-Left> v<Left>
-    vmap <S-Left> <Left>
-    imap <S-Left> <Esc>v<Left>
-    nmap <S-Right> v<Right>
-    vmap <S-Right> <Right>
-    imap <S-Right> <Esc>v<Right>
+    nmap <S-Up> v^k
+    vmap <S-Up> ^k
+    imap <S-Up> <Esc>v^k
+    nmap <S-Down> v$j
+    vmap <S-Down> $j
+    imap <S-Down> <Esc>v$j
+    nmap <S-Left> vh
+    vmap <S-Left> h
+    imap <S-Left> <Esc>vh
+    nmap <S-Right> vk
+    vmap <S-Right> k
+    imap <S-Right> <Esc>vk
     vmap <S-End> $
     vmap <S-Home> 0
 " end shift+arrows }}}
@@ -291,14 +291,14 @@ nnoremap <space>p :Unite history/yank<cr>
 " use <cr> as <C-y> when it's open
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 
-" ----------------------------------------
-" end key bindings }}}
-" ----------------------------------------
-"
-
 "--- rip arrows
 
 noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
+
+" ----------------------------------------
+" end key bindings }}}
+" ----------------------------------------
+"
