@@ -81,15 +81,15 @@ I have personally tested and used this setup on the following platforms:
 * `<space>p` to bring up a selection list of your previous N pastes,
   for you to select from
 * `<ctrl>t` to open up NERDtree
-* special alt arrows
+* arrow keys turned off (this is vim after all)
+* except special alt arrows (alt+hjkl doesn't seem to work right)
   * you may need to enable these in your terminal emulator
   * checkout the MapKeycode function in vimrc
     for how you can manually map the escape codes for them
-  * `<alt>k` and `<alt>j` arrows to move lines up/down
-  * `<alt>h` and `<alt>l` arrows to unindent/indent
+  * `<alt>up` and `<alt>down` arrows to move lines up/down
+  * `<alt>left` and `<alt>right` arrows to unindent/indent
 * `<ctrl>h` to toggle highlight search mode
 * `<ctrl>f` to do recursive vimgrep on symbol under cursor
-* arrow keys turned off (this is vim after all)
 * `<ctrl>n` to start using
   [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
 * `\b` to swap buffer to last open file
