@@ -1,5 +1,39 @@
 # JDeuce's vimfiles
 
+## Table of Contents
+
+* [Introduction](#introduction)
+* [Minimum setup](#minimum-setup)
+  * [Recommended setup](#recommended-setup)
+  * [Compiling vim from source](#compiling-vim-from-source)
+* [Features](#features)
+  * [Extra syntax highlighting](#extra-syntax-highlighting)
+  * [Extra key bindings](#extra-key-bindings)
+  * [Features you can use with commands](#features-you-can-use-with-commands)
+* [Installing](#installing)
+  * [Clone the repo](#clone-the-repo)
+    * [More info](#more-info)
+  * [The bells and whistles](#the-bells-and-whistles)
+    * [Linters](#linters)
+      * [Python linters](#python-linters)
+        * [Flake8](#flake8)
+        * [PEP8](#pep8)
+      * [JavaScript linters](#javascript-linters)
+        * [eslint](#eslint)
+      * [Other linters](#other-linters)
+      * [Markdown](#markdown)
+    * [Completor](#completor)
+      * [Python completor (jedi)](#python-completor-jedi)
+      * [JavaScript completor (tern)](#javascript-completor-tern)
+* [Modifying the setup](#modifying-the-setup)
+  * [Plugins](#plugins)
+  * [Editing the vimrc](#editing-the-vimrc)
+    * [Adding a plugin](#adding-a-plugin)
+    * [Removing plugin](#removing-plugin)
+    * [Updating a plugin](#updating-a-plugin)
+
+## Introduction
+
 This is my VIM setup. It is mostly tuned for editing python,
 javascript, and HTML.
 
