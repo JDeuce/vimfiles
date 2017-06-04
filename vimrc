@@ -64,6 +64,7 @@ set clipboard=unnamed
 set modelines=0
 set nomodeline
 
+" write a file as sudo without re-opening vim
 command! Sw :w !sudo tee % > /dev/null
 
 " ----------------------------------------
@@ -172,6 +173,13 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_python_checkers = ['flake8']
 " end Syntastic settings }}}
 
+" ale {{{
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'python': ['pyflakes']
+\}
+" end ale settings }}}
+
 " Unite settings {{{
 let g:unite_source_history_yank_enable = 1
 let g:unite_source_history_yank_limit = 5
@@ -272,7 +280,7 @@ vnoremap & :normal &<CR>
 nmap <leader>b :b#<CR>
 
 " PLUGIN bindings:
-" Ctrl+N toggles nerd tree
+" Ctrl+T toggles nerd tree
 nmap <C-T> :NERDTreeToggle<CR>
 
 " Unite bindings
