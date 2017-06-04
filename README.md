@@ -78,29 +78,29 @@ I have personally tested and used this setup on the following platforms:
 
 ### Extra key bindings
 
-* \<space\>p to bring up a selection list of your previous N pastes,
+* `\<space\>p` to bring up a selection list of your previous N pastes,
   for you to select from
-* \<ctrl\>t to open up NERDtree
+* `\<ctrl\>t` to open up NERDtree
 * special alt arrows
   * you may need to enable these in your terminal emulator
   * checkout the MapKeycode function in vimrc
     for how you can manually map the escape codes for them
-  * alt+up and alt+down arrows to move lines up/down
-  * alt+right and alt+left to unindent/indent
-* \<ctrl\>h to toggle highlight search mode
-* \<ctrl\>f to do recursive vimgrep on symbol under cursor
+  * `\<alt\>k` and \`<alt\>j` arrows to move lines up/down
+  * `\<alt\>h` and \`<alt\>l` arrows to unindent/indent
+* `\<ctrl\>h` to toggle highlight search mode
+* `\<ctrl\>f` to do recursive vimgrep on symbol under cursor
 * arrow keys turned off (this is vim after all)
-* \<ctrl\>n to start using
+* `\<ctrl\>n` to start using
   [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
-* \b to swap buffer to last open file
+* `\b` to swap buffer to last open file
 * a few other ones (checkout the config)
 
 ### Features you can use with commands
 
-* :GundoToggle - hide / show an undo graph if you need more than one branch
-* :Align \<symbol\> - Visual select a group of lines and then run that
+* `:GundoToggle` - hide / show an undo graph if you need more than one branch
+* `:Align \<symbol\>` - Visual select a group of lines and then run that
   to align them all on some symbol, such as : or ,
-* :Sw - run this if you need to :w the file as sudo without re-opening vim
+* `:Sw` - run this if you need to :w the file as sudo without re-opening vim
 
 ## Installing
 
