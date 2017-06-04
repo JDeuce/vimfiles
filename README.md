@@ -219,7 +219,7 @@ Install eslint into your system:
 
 Or into your project
 
-   yarn add eslint
+    yarn add eslint
 
 ##### Other linters
 
