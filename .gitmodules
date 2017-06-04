@@ -66,9 +66,6 @@
 [submodule "bundle/vim-jsx"]
 	path = bundle/vim-jsx
 	url = https://github.com/mxw/vim-jsx
-[submodule "bundle/syntastic-local-eslint"]
-	path = bundle/syntastic-local-eslint
-	url = https://github.com/mtscout6/syntastic-local-eslint.vim
 [submodule "bundle/vim-javascript"]
 	path = bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript
