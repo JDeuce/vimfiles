@@ -26,8 +26,8 @@
       * [Python completor (jedi)](#python-completor-jedi)
       * [JavaScript completor (tern)](#javascript-completor-tern)
 * [Modifying the setup](#modifying-the-setup)
-  * [Plugins](#plugins)
   * [Editing the vimrc](#editing-the-vimrc)
+  * [Plugins](#plugins)
     * [Adding a plugin](#adding-a-plugin)
     * [Removing plugin](#removing-plugin)
     * [Updating a plugin](#updating-a-plugin)
@@ -260,11 +260,11 @@ You need to install tern into completor
 
 ## Modifying the setup
 
-### Plugins
-
 ### Editing the vimrc
 
 Note: the keystroke to unfold all code is zR
+
+### Plugins
 
 #### Adding a plugin
 
