@@ -176,7 +176,7 @@ let g:syntastic_python_checkers = ['flake8']
 " ale {{{
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'python': ['pyflakes']
+\   'python': ['flake8']
 \}
 " end ale settings }}}
 
